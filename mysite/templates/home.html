@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>This is the homepage.</h1>
+<a href="{% url 'add_person' %}">add a new person</a><br>
+{% for i in persons %}
+  {{ i.name }}<br>
+  {{ i.age }}<br>
+  {{ i.address }}<br>
+{{ i.nid }}<br>
+<a href="{% url 'update_person' i.id %}">Update</a>
+<a href="{% url 'delete_person' i.id %}">Delete</a>
+  <br><br>
+{% endfor %}
+</body>
+</html>
